@@ -1,0 +1,84 @@
+{
+  "expo": {
+    "name": "ring-expo",
+    "slug": "ring-expo",
+    "version": "1.0.0",
+    "scheme": "sinian",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "bluetooth-central",
+          "bluetooth-central"
+        ]
+      },
+      "bundleIdentifier": "com.hangx05.ringexpo"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE",
+        "android.permission.POST_NOTIFICATIONS"
+      ],
+      "package": "com.hangx05.ringexpo"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": true,
+          "modes": [
+            "central"
+          ],
+          "bluetoothAlwaysPermission": "WhisperRing 需要蓝牙来扫描并连接你的语音戒指"
+        }
+      ],
+      "expo-router",
+      [
+        "react-native-android-widget",
+        {
+          "widgets": [
+            {
+              "name": "Sinian",
+              "label": "想念 · WhisperRing",
+              "minWidth": "180dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 4,
+              "targetCellHeight": 2,
+              "description": "实时显示 TA 什么时候 tick 你与今日思念数",
+              "resizeMode": "horizontal|vertical",
+              "updatePeriodMillis": 1800000
+            }
+          ]
+        }
+      ],
+      "expo-audio",
+      "expo-asset"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "90209811-96af-462d-beba-c90225a76319"
+      }
+    }
+  }
+}
